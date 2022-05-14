@@ -1,1 +1,34 @@
+void loop()
+{
+ 
 
+  if (Serial.available() > 0)
+  {
+    Incoming_value = Serial.read();
+    Serial.println(Incoming_value);
+    Serial.println("\n");
+    if(Incoming_value == '1')
+      digitalWrite(13, HIGH);
+          delay(2220);
+      digitalWrite(13, LOW);
+      //Gira o Motor A no sentido horario- cai o protetor oricular
+      
+    if(Incoming_value == '2')
+      digitalWrite(8, HIGH);
+          delay(2220);
+      digitalWrite(8, LOW);
+      //Gira o Motor B no sentido horario- cai a luva 
+
+    if(Incoming_value == '3')
+      digitalWrite(12, HIGH);
+          delay(2220);
+      digitalWrite(12, LOW);
+      //Gira o Motor C no sentido horario- cai a mascara 
+
+       if(Incoming_value == '4')
+      digitalWrite(10, HIGH);
+          delay(2220);
+      digitalWrite(10, LOW);
+      //Gira o Motor D no sentido horario- cai o oculos 
+  }
+}
